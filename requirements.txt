@@ -1,0 +1,5 @@
+jieba
+scipy
+numpy
+sklearn
+pandas

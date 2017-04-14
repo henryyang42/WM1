@@ -21,7 +21,7 @@ The relevancy of a query and documents could be derived from performing cosine s
 ### 1.3 Rocchio Relevance Feedback
 Since we don't know the exact relevant set for each query, we implement the pseudo version of Rocchio relevance feedback by assuming top results relevant.  Here, we define a threshold ``r_threshold``, the similarity our assuming relevant set should exceed, ``r_max`` the upper limit of documents as relevant set. With the help of ``scipy`` and ``numpy``, such idea could be formulate into 2 lines given computed similarities (``sims``):
 
-```py
+```python
 topN = min(len(sims[sims > r_treshold]), r_max)
 query_vector = query_vector + r_beta / topN * np.sum(vectors[top100[:topN]], axis=0)
 ```
@@ -44,7 +44,7 @@ Different weighting schema with or without Rocchio relevance feedback.
 ---
 
 ### 2.2 Tuning Rocchio Relevance Feedback
-![](https://i.imgur.com/liy4fPf.jpg =550x)
+![](https://i.imgur.com/liy4fPf.jpg)
 
 Performance under various weighting schema and beta value.
 
